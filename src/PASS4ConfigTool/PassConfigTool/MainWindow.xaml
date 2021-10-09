@@ -1,0 +1,83 @@
+﻿<Window x:Class="PassConfigTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PassConfigTool"
+        mc:Ignorable="d"
+        Title="PASS4服务配置工具" Height="428" Width="561.999" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="White" FontFamily="SimHei">
+    <Grid Background="#FFFAFAFA">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="#FFC1C1C1" BorderThickness="1" HorizontalAlignment="Left" Height="428" VerticalAlignment="Top" Width="562"/>
+
+        <Grid HorizontalAlignment="Left" Height="55" VerticalAlignment="Top" Width="562" MouseMove="Grid_MouseMove">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform Angle="103.241" CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#FF1DA1DE" Offset="0"/>
+                    <GradientStop Color="#FF3872F0" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Image x:Name="ExitButton" HorizontalAlignment="Left" Height="23" Margin="531,15,0,0" VerticalAlignment="Top" Width="19" Source="exit.png" MouseDown="ExitButton_MouseDown"/>
+            <Label x:Name="PASS4" Content="PASS4" HorizontalAlignment="Left" Margin="18,6,0,0" VerticalAlignment="Top" Foreground="#FFFFFAEA" FontSize="30" FontWeight="Bold"/>
+            <Label x:Name="lab" Content="服务配置工具" HorizontalAlignment="Left" Margin="100,10,0,0" VerticalAlignment="Top" Foreground="WhiteSmoke" FontWeight="Bold" FontSize="14.667"/>
+            <Label x:Name="ver" Content="Ver 2.5" HorizontalAlignment="Left" Margin="101,25,0,0" VerticalAlignment="Top" Foreground="WhiteSmoke" FontSize="9.333" FontWeight="Bold"/>
+        </Grid>
+
+        <TextBox x:Name="InstallPathTextBox" HorizontalAlignment="Left" Height="23" Margin="19,91,0,0" TextWrapping="Wrap" Text="安装路径" VerticalAlignment="Top" Width="453" Foreground="Black" BorderBrush="#FFC7C7C7" SelectionBrush="#FF005D6C" FontSize="13"/>
+        <Button x:Name="ScanButton" Content="扫描文件" HorizontalAlignment="Left" Margin="488,91,0,0" VerticalAlignment="Top" Width="56" Height="23" Click="ScanButton_Click" Foreground="Black" BorderBrush="#FFC7C7C7" Background="White" FontSize="13"/>
+        <Label x:Name="label" Content="安装路径（MedicomSoftware）" HorizontalAlignment="Left" Margin="9,66,0,0" VerticalAlignment="Top" FontSize="13" FontWeight="Bold"/>
+        <TextBox x:Name="LastConfig" HorizontalAlignment="Left" Height="23" Margin="19,147,0,0" TextWrapping="Wrap" Text="IP地址" VerticalAlignment="Top" Width="129" Foreground="Black" BorderBrush="#FFC7C7C7" SelectionBrush="#FF005D6C" FontSize="13"/>
+        <Button x:Name="SaveButton" Content="保存配置" HorizontalAlignment="Left" Margin="488,147,0,0" VerticalAlignment="Top" Width="56" Height="23" Foreground="Black" BorderBrush="#FFC7C7C7" Click="SaveButton_Click" Background="White" FontSize="13"/>
+        <Label x:Name="label_Copy" Content="当前配置" HorizontalAlignment="Left" Margin="9,122,0,0" VerticalAlignment="Top" FontSize="13" FontWeight="Bold"/>
+        <Label x:Name="label_Copy1" Content="文件状态" HorizontalAlignment="Left" Margin="9,178,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="13" FontWeight="Bold"/>
+        <Label x:Name="label1" Content="核心服务  PASS4CoreService.ini" HorizontalAlignment="Left" Margin="19,200,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="13"/>
+        <Label x:Name="a1" Content="●" HorizontalAlignment="Left" Margin="235,200,0,0" VerticalAlignment="Top" Foreground="#FFD6D6D6" Background="Transparent"/>
+        <Label x:Name="label1_Copy1" Content="Web服务   McConfig.js" HorizontalAlignment="Left" Margin="19,250,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="13"/>
+        <Label x:Name="a3" Content="●" HorizontalAlignment="Left" Margin="235,250,0,0" VerticalAlignment="Top" Foreground="#FFD6D6D6"/>
+        <Label x:Name="label1_Copy3" Content="Web服务   McLoader.js" HorizontalAlignment="Left" Margin="19,275,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="13"/>
+        <Label x:Name="a4" Content="●" HorizontalAlignment="Left" Margin="235,275,0,0" VerticalAlignment="Top" Foreground="#FFD6D6D6"/>
+        <Label x:Name="label1_Copy5" Content="BS客户端  McConfig.js" HorizontalAlignment="Left" Margin="19,300,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="13"/>
+        <Label x:Name="a5" Content="●" HorizontalAlignment="Left" Margin="235,300,0,0" VerticalAlignment="Top" Foreground="#FFD6D6D6"/>
+        <Label x:Name="label1_Copy7" Content="BS客户端  McLoader.js" HorizontalAlignment="Left" Margin="19,325,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="13"/>
+        <Label x:Name="a6" Content="●" HorizontalAlignment="Left" Margin="235,325,0,0" VerticalAlignment="Top" Foreground="#FFD6D6D6"/>
+        <Label x:Name="label1_Copy9" Content="CS客户端  PASS4Invoke.ini" HorizontalAlignment="Left" Margin="19,350,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="13"/>
+        <Label x:Name="a7" Content="●" HorizontalAlignment="Left" Margin="235,350,0,0" VerticalAlignment="Top" Foreground="#FFD6D6D6"/>
+        <Label x:Name="label1_Copy11" Content="ADR监测   Web.config" HorizontalAlignment="Left" Margin="279,200,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="13"/>
+        <Label x:Name="b1" Content="●" HorizontalAlignment="Left" Margin="516,200,0,0" VerticalAlignment="Top" Foreground="#FFD6D6D6"/>
+        <Label x:Name="label1_Copy13" Content="用药自查  Web.config" HorizontalAlignment="Left" Margin="279,225,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="13"/>
+        <Label x:Name="b2" Content="●" HorizontalAlignment="Left" Margin="516,225,0,0" VerticalAlignment="Top" Foreground="#FFD6D6D6"/>
+        <Label x:Name="label1_Copy15" Content="维护工具  Web.config" HorizontalAlignment="Left" Margin="279,250,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="13"/>
+        <Label x:Name="b3" Content="●" HorizontalAlignment="Left" Margin="516,250,0,0" VerticalAlignment="Top" Foreground="#FFD6D6D6"/>
+        <Label x:Name="label1_Copy17" Content="药师干预  Web.config" HorizontalAlignment="Left" Margin="279,275,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="13"/>
+        <Label x:Name="b4" Content="●" HorizontalAlignment="Left" Margin="516,275,0,0" VerticalAlignment="Top" Foreground="#FFD6D6D6"/>
+        <Label x:Name="label1_Copy19" Content="药师干预  McConfig.js" HorizontalAlignment="Left" Margin="279,300,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="13"/>
+        <Label x:Name="b5" Content="●" HorizontalAlignment="Left" Margin="516,300,0,0" VerticalAlignment="Top" Foreground="#FFD6D6D6"/>
+        <Label x:Name="label1_Copy21" Content="临床药学  PASSPA2.ini" HorizontalAlignment="Left" Margin="279,325,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="13"/>
+        <Label x:Name="b6" Content="●" HorizontalAlignment="Left" Margin="516,325,0,0" VerticalAlignment="Top" Foreground="#FFD6D6D6"/>
+        <TextBox x:Name="SaveConfig" HorizontalAlignment="Left" Height="23" Margin="255,147,0,0" TextWrapping="Wrap" Text="IP地址" VerticalAlignment="Top" Width="129" Foreground="Black" BorderBrush="#FFC7C7C7" SelectionBrush="#FF005D6C" FontSize="13"/>
+        <Label x:Name="label_Copy2" Content="期望配置" HorizontalAlignment="Left" Margin="244,122,0,0" VerticalAlignment="Top" FontSize="13" FontWeight="Bold"/>
+        <Label x:Name="label2" Content="PASS4服务配置工具" HorizontalAlignment="Left" Margin="9,9,0,0" VerticalAlignment="Top" FontSize="22" Foreground="White" FontWeight="Bold" Visibility="Hidden"/>
+        <TextBox x:Name="LastConfig_Port" HorizontalAlignment="Left" Height="23" Margin="153,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39" Foreground="Black" BorderBrush="#FFC7C7C7" SelectionBrush="#FF005D6C" FontSize="13"/>
+        <TextBox x:Name="SaveConfig_Port" HorizontalAlignment="Left" Height="23" Margin="389,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39" Foreground="Black" BorderBrush="#FFC7C7C7" SelectionBrush="#FF005D6C" FontSize="13"/>
+        <Label x:Name="label_Copy3" Content="☺ 保存配置时会同步更新PASSIM，并在各配置文件同目录备份副本" HorizontalAlignment="Left" Margin="13,387,0,0" VerticalAlignment="Top" Foreground="#FF0080FF" MouseEnter="label_Copy3_MouseEnter" MouseLeave="label_Copy3_MouseLeave" FontSize="13"/>
+        <TextBox x:Name="LastConfig_IISPort" HorizontalAlignment="Left" Height="23" Margin="197,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39" Foreground="Black" BorderBrush="#FFC7C7C7" SelectionBrush="#FF005D6C" FontSize="13"/>
+        <TextBox x:Name="SaveConfig_IISPort" HorizontalAlignment="Left" Height="23" Margin="433,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39" Foreground="Black" BorderBrush="#FFC7C7C7" SelectionBrush="#FF005D6C" FontSize="13"/>
+        <Label x:Name="label_Copy4" Content="PASS，IIS端口" HorizontalAlignment="Left" Margin="382,123,0,0" VerticalAlignment="Top" Width="101" FontSize="13"/>
+        <Label x:Name="label_Copy5" Content="PASS，IIS端口" HorizontalAlignment="Left" Margin="146,123,0,0" VerticalAlignment="Top" Width="93" FontSize="13"/>
+        <Label x:Name="label1_Copy" Content="临床药学  PASSPA2Service.exe.config" HorizontalAlignment="Left" Margin="279,350,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="13"/>
+        <Label x:Name="b7" Content="●" HorizontalAlignment="Left" Margin="516,350,0,0" VerticalAlignment="Top" Foreground="#FFD6D6D6"/>
+        <Label x:Name="label1_Copy2" Content="Web服务   Config.ini" HorizontalAlignment="Left" Margin="19,225,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="13"/>
+        <Label x:Name="a2" Content="●" HorizontalAlignment="Left" Margin="235,225,0,0" VerticalAlignment="Top" Foreground="#FFD6D6D6"/>
+
+    </Grid>
+</Window>
